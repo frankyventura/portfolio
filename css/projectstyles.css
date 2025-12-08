@@ -1,0 +1,380 @@
+/*
+	Author: Franky Ventura
+	Student ID: 0816694
+	Course: WEB210
+	Date: July 18th, 2025
+
+	-------------------------------
+	CSS TABLE OF CONTENTS
+	-------------------------------
+
+	1. Font Face Declarations
+	2. Body & HTML Styles
+	3. Main Layout
+	4. Navigation Styles (Top-Left)
+	5. Header Styles
+	6. Section Layout
+	7. Left Block Styles (Title, Image, GitHub)
+	8. Right Block Styles (Description)
+	9. Prev/Next Project Navigation
+	10. Footer Styles
+	11. Mobile Navigation (Hamburger / Curtain Menu)
+	12. Responsive Layout (Media Queries)
+*/
+
+/* 1. Font Face Declarations */
+@font-face {
+	font-family: 'Agency';
+	src: url(../fonts/Agency.ttf) format('truetype');
+}
+
+/* 2. Body & HTML Styles */
+html, body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	font-family: 'Agency', sans-serif;
+	background: linear-gradient(to bottom, #1c1f23 0%, #2e2f36 25%, #611e2e 75%, #801b28 100%);
+	background-position: fixed;
+	background-repeat: no-repeat;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+/* 3. Main Layout */
+
+main {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+/* 4. Navigation Styles (Top-Left) */
+body > nav {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 100;
+	width: 20%;
+}
+
+body > nav ul {
+	list-style: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+body > nav a {
+	color: white;
+	text-decoration: underline;
+	font-size: 1.5em;
+}
+
+body > nav a:hover {
+	color: #c41e3a;
+	transition: 0.2s;
+}
+
+/* 5. Header Styles */
+header {
+	text-align: center;
+	margin-top: 10px;
+	position: relative;
+}
+
+header h1 {
+	font-size: 3em;
+	text-decoration: underline;
+	font-weight: lighter;
+}
+
+header p {
+	position: absolute;
+	right: 30px;
+	top: 0;
+	font-size: 1.2em;
+}
+
+/* 6. Section Layout */
+section {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0 50px 0;
+	margin-left: 60px;
+	margin-top: 100px;
+}
+
+/* 7. Left Block Styles (Title, Image, GitHub) */
+section > div:first-of-type {
+	text-align: center;
+	flex: 1;
+}
+
+section > div:first-of-type h2 {
+	font-size: 2.5em;
+	text-decoration: underline;
+	font-weight: lighter;
+	margin-bottom: 10px;
+}
+
+figure {
+	margin: 0 auto;
+	width: 100%;
+}
+
+figure img {
+	width: 500px;
+	height: auto;
+	border: 3px solid #801b28;
+	display: block;
+	margin: 0 auto;
+}
+
+section > div:first-of-type a {
+	display: inline-block;
+	margin-top: 15px;
+	padding: 8px 20px;
+	border: 1.5px solid white;
+	border-radius: 8px;
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+section > div:first-of-type a:hover {
+	background: white;
+	color: #1c1f23;
+	transition: 0.2s;
+}
+
+/* 8. Right Block Styles (Description) */
+section > div:last-of-type {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+section > div:last-of-type h2 {
+	font-size: 2.5em;
+	text-decoration: underline;
+	margin-bottom: 15px;
+	width: 100%;
+	text-align: center;
+	font-weight: lighter;
+}
+
+section > div:last-of-type p {
+	font-size: 1.3em;
+	max-width: 400px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* 9. Prev/Next Project Navigation */
+main > nav:last-of-type {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 30px;
+	transform: translateY(-50%);
+}
+
+main > nav:last-of-type a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.4em;
+	transition: 0.2s;
+}
+
+main > nav:last-of-type a:hover {
+	color: #c41e3a;
+}
+
+/* 10. Footer Styles */
+footer {
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: auto;
+}
+
+footer a {
+	color: white;
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: red;
+	transition: 0.2s;
+}
+
+/* 11. Mobile Navigation (Hamburger / Curtain Menu) */
+.hamburger-icon, #myNav, .overlay {
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	div h2 {
+		text-decoration: underline;
+	}
+
+	.hamburger-icon {
+		display: block;
+		position: fixed;
+		top: 20px;
+		right: 30px;
+		font-size: 2em;
+		color: white;
+		z-index: 1001;
+	}
+
+	.overlay {
+		display: block;
+		height: 0%;
+		width: 100%;
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to bottom, #1c1f23 0%, #2e2f36 40%, #611e2e 80%, #801b28 100%);
+		overflow-y: hidden;
+		transition: height 0.5s ease;
+	}
+
+	.overlay-content {
+		position: relative;
+		top: 15%;
+		width: 100%;
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.overlay-content h2 {
+		font-size: 2em;
+		color: white;
+		margin-bottom: 40px;
+		font-weight: normal;
+	}
+
+	.overlay-content a {
+		padding: 10px;
+		text-decoration: underline;
+		font-size: 2em;
+		color: white;
+		display: block;
+		transition: 0.3s;
+	}
+
+	.overlay-content a:hover {
+		color: #c41e3a;
+	}
+
+	.closebtn {
+		position: absolute;
+		top: 20px;
+		right: 35px;
+		font-size: 3em;
+		color: white;
+		text-decoration: none;
+	}
+
+	.nav-footer {
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		text-align: center;
+		font-size: 1.5em;
+		color: white;
+	}
+
+	.nav-footer a {
+		color: white;
+	}
+}
+
+/* 12. Responsive Layout (Media Queries) */
+@media screen and (max-width: 1024px) {
+	html, body {
+		overflow-x: hidden;
+		width: 100%;
+	}
+
+	nav:first-child {
+		display: none;
+	}
+
+	header {
+		margin-top: 40px;
+		padding: 0 20px;
+	}
+
+	header h1 {
+		font-size: 2.2em;
+	}
+
+	header p {
+		position: static;
+		margin-top: 10px;
+		font-size: 1.1em;
+		text-align: center;
+	}
+
+	section {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin: 0;
+		padding: 20px;
+	}
+
+	section > div:first-of-type,
+	section > div:last-of-type {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	figure img {
+		width: 90%;
+		max-width: 400px;
+	}
+
+	section > div:first-of-type h2,
+	section > div:last-of-type h2 {
+		font-size: 2em;
+	}
+
+	section > div:last-of-type p {
+		font-size: 1.2em;
+		max-width: 100%;
+		padding: 0 10px;
+	}
+
+	body > nav {
+		display: none;
+	}
+
+	main > nav:last-of-type {
+		position: static;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 30px;
+		margin-bottom: 20px;
+		transform: none;
+	}
+
+	footer {
+		padding: 20px 10px;
+		font-size: 1.2em;
+	}
+}

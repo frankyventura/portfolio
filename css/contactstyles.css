@@ -1,0 +1,331 @@
+/*
+	Author: Franky Ventura
+	Student ID: 0816694
+	Course: WEB210
+	Date: July 17th, 2025
+
+	-------------------------------
+	CSS TABLE OF CONTENTS
+	-------------------------------
+
+	1. CSS Reset
+	2. Font Face Declarations
+	3. Body & HTML Styles
+	4. Header Styles
+	5. Main Layout
+	6. Navigation Styles
+	7. Form Styles
+	8. Submit Button Styles
+	9. Footer Styles
+	10. Link Styles
+	11. Mobile Navigation (Hamburger / Curtain Menu)
+	12. Responsive Layout (Media Queries)
+*/
+
+/* 1. CSS Reset */
+/* Handled using normalize.css (linked externally) */
+
+/* 2. Font Face Declarations */
+@font-face {
+	font-family: 'Agency';
+	src: url(../fonts/Agency.ttf) format('truetype');
+}
+
+/* 3. Body & HTML Styles */
+html, body {
+	display: flex;
+  	flex-direction: column;
+  	justify-content: space-between;
+	height: 100%;
+	font-family: 'Agency', sans-serif;
+	background: linear-gradient(to bottom, #1c1f23 0%, #2e2f36 40%, #611e2e 80%, #801b28 100%);
+	color: white;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+}
+
+/* 4. Header Styles */
+header {
+	text-align: center;
+	margin-bottom: 30px;
+	padding: 0 20px;
+	max-width: 800px;
+	margin-top: 20px;
+}
+
+header h1 {
+	font-size: 3em;
+	margin-bottom: 0.2em;
+	text-decoration: underline;
+	font-weight: lighter;
+}
+
+header p:first-of-type {
+	font-size: 1.4em;
+	margin: 3px 0;
+}
+
+header p:last-of-type {
+	font-size: 1em;
+}
+
+/* 5. Main Layout */
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
+  }
+
+/* 6. Navigation Styles */
+nav {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav a {
+	color: white;
+	text-decoration: underline;
+	display: inline-block;
+	text-align: center;
+}
+
+nav a:hover {
+	color: #c41e3a;
+	transition: 0.2s;
+}
+
+/* 7. Form Styles */
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+label {
+	font-size: 1.5em;
+	margin-top: 10px;
+	text-decoration: underline;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	font-size: 1.2em;
+	padding: 8px 12px;
+	border: 1.5px solid white;
+	border-radius: 8px;
+	background: transparent;
+	color: white;
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+textarea {
+	width: 500px;
+	max-width: 90%;
+	height: 250px;
+	resize: none; /* I know we haven't learned this yet, but I don't want this to be resizable*/
+}
+
+/* 8. Submit Button Styles */
+input[type="submit"] {
+	margin-top: 15px;
+	font-size: 1.2em;
+	background: transparent;
+	color: white;
+	border: 1.5px solid white;
+	padding: 8px 14px;
+	border-radius: 10px;
+	cursor: pointer; /* We didn't learn this yet either, it just changes the cursor when you hover over something. */
+	transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+	background: white;
+	color: #2e2f36;
+}
+
+/* 9. Footer Styles */
+footer {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+footer a {
+	color: white;
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: #c41e3a;
+	transition: 0.2s;
+}
+
+/* 10. Link Styles */
+a {
+	color: white;
+}
+
+a:hover {
+	color: #c41e3a;
+	transition: 0.25s;
+}
+
+/* 11. Mobile Navigation (Hamburger / Curtain Menu) */
+.hamburger-icon,
+#myNav,
+.overlay {
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	div h2 {
+		text-decoration: underline;
+	}
+
+	.hamburger-icon {
+		display: block;
+		position: fixed;
+		top: 20px;
+		right: 30px;
+		font-size: 2em;
+		color: white;
+		z-index: 1001;
+	}
+
+	.overlay {
+		display: block;
+		height: 0%;
+		width: 100%;
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to bottom, #1c1f23 0%, #2e2f36 40%, #611e2e 80%, #801b28 100%);
+		overflow-y: hidden;
+		transition: height 0.5s ease;
+	}
+
+	.overlay-content {
+		position: relative;
+		top: 15%;
+		width: 100%;
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.overlay-content h2 {
+		font-size: 2em;
+		color: white;
+		margin-bottom: 40px;
+		font-weight: normal;
+	}
+
+	.overlay-content a {
+		padding: 10px;
+		text-decoration: underline;
+		font-size: 2em;
+		color: white;
+		display: block;
+		transition: 0.3s;
+	}
+
+	.overlay-content a:hover {
+		color: #c41e3a;
+	}
+
+	.closebtn {
+		position: absolute;
+		top: 20px;
+		right: 35px;
+		font-size: 3em;
+		color: white;
+		text-decoration: none;
+	}
+
+	.nav-footer {
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		text-align: center;
+		font-size: 1.5em;
+		color: white;
+	}
+
+	.nav-footer a {
+		color: white;
+	}
+}
+
+/* 12. Responsive Layout (Media Queries) */
+@media screen and (max-width: 1024px) {
+	nav {
+		display: none;
+	}
+
+	body {
+		overflow-x: hidden;
+	}
+
+	header {
+		margin-top: 10px;
+		padding: 0 10px;
+	}
+
+	header h1 {
+		font-size: 2.4em;
+	}
+
+	header p:first-of-type {
+		font-size: 1.5em;
+	}
+
+	header p:last-of-type {
+		font-size: 0.95em;
+	}
+
+	form {
+		width: 90%;
+	}
+
+	label {
+		font-size: 1.4em;
+		margin-bottom: 6px;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 100%;
+		font-size: 1.1em;
+	}
+
+	textarea {
+		height: 200px;
+	}
+
+	input[type="submit"] {
+		font-size: 1.1em;
+		padding: 8px 20px;
+		margin-bottom: 20px;
+	}
+
+	footer {
+		font-size: 1.1em;
+		padding: 0 10px;
+	}
+}

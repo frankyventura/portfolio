@@ -1,0 +1,315 @@
+/*
+	Author: Franky Ventura
+	Student ID: 0816694
+	Course: WEB210
+	Date: July 17th, 2025
+
+	-------------------------------
+	CSS TABLE OF CONTENTS
+	-------------------------------
+
+	1. CSS Reset
+	2. Font Face Declarations
+	3. Body & HTML Styles
+	4. Navigation Styles
+	5. Header Styles
+	6. Main Layout
+	7. Article Styles
+	8. Quote Styles
+	9. Footer Styles
+	10. Mobile Navigation (Hamburger / Curtain Menu)
+	11. Responsive Layout (Media Queries)
+*/
+
+/* 1. CSS Reset */
+/* (Handled with normalize.css externally) */
+
+/* 2. Font Face Declarations */
+@font-face {
+    font-family: 'Agency';
+    src: url(../fonts/Agency.ttf) format('truetype');
+}
+
+/* 3. Body & HTML Styles */
+html, body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: 'Agency', sans-serif;
+    background: linear-gradient(to bottom, #1c1f23 0%, #2e2f36 40%, #611e2e 80%, #801b28 100%);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* 4. Navigation Styles */
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: underline;
+    display: inline-block;
+    text-align: center;
+}
+
+nav a:hover {
+    color: #c41e3a;
+    transition: 0.2s;
+}
+
+/* 5. Header Styles */
+header {
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 30px;
+    max-width: 500px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+    text-decoration: underline;
+    font-weight: lighter;
+}
+
+header p {
+    font-size: 1.3em;
+}
+
+/* 6. Main Layout */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+main div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1600px;
+}
+
+/* 7. Article Styles */
+article {
+    flex: 1 1 40%;
+    max-width: 700px;
+    box-sizing: border-box;
+    margin-top: -20px;
+    text-align: center;
+    list-style: inside;
+    margin-bottom: 10px;
+}
+
+main div article:first-child {
+    margin-right: 40px;
+}
+
+article h2 {
+    font-size: 2.5em;
+    text-decoration: underline;
+    margin-bottom: -0.2em;
+    font-weight: lighter;
+}
+
+article p,
+article li {
+    font-size: 1.5em;
+}
+
+article ul {
+    list-style-type: "- ";
+    padding-left: 1.5em;
+}
+
+/* 8. Quote Styles */
+main + p {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.3em;
+    margin-bottom: -20px;
+}
+
+/* 9. Footer Styles */
+footer {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #c41e3a;
+    transition: 0.2s;
+}
+
+/* 10. Mobile Navigation (Hamburger / Curtain Menu) */
+.hamburger-icon, #myNav, .overlay {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    div h2 {
+        text-decoration: underline;
+    }
+
+    .hamburger-icon {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        font-size: 2em;
+        color: white;
+        z-index: 1001;
+    }
+
+    .overlay {
+        display: block;
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to bottom, #1c1f23 0%, #2e2f36 40%, #611e2e 80%, #801b28 100%);
+        overflow-y: hidden;
+        transition: height 0.5s ease;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 15%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .overlay-content h2 {
+        font-size: 2em;
+        color: white;
+        margin-bottom: 40px;
+        font-weight: normal;
+    }
+
+    .overlay-content a {
+        padding: 10px;
+        text-decoration: underline;
+        font-size: 2em;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay-content a:hover {
+        color: #c41e3a;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        font-size: 3em;
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-footer {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        color: white;
+    }
+
+    .nav-footer a {
+        color: white;
+    }
+}
+
+/* 11. Responsive Layout (Media Queries) */
+@media screen and (max-width: 1024px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    header {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    header p {
+        font-size: 1.5em;
+    }
+
+    nav {
+        display: none;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+
+    main > div {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    article {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+        margin: 8px 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    article h2,
+    article p,
+    article li {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    article ul {
+        list-style-position: inside;
+        padding-left: 0;
+    }
+
+    main div article:first-child {
+        margin-right: 0;
+    }
+
+    main + p {
+        padding: 0 10px;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+}
