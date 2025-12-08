@@ -271,7 +271,7 @@ footer p > a {
 /* 12. Responsive Layout (Media Queries) */
 
 /* One-column stacked layout for tablets and phones */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1180px) {
 	main {
 		flex-direction: column;
 		align-items: center;
@@ -311,7 +311,7 @@ footer p > a {
 		top: -20px;
 		left: -20px;
 		width: 80%;
-		height: 80%;
+		height: 70%;
 		margin-left: 20px;
 	}
 
